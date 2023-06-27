@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:so_qr_menu/screens/detail_page/detail_page.dart';
@@ -16,10 +17,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   ScrollController scrollcontrollerh = ScrollController();
   final ScrollController scrollcontrollerv = ScrollController();
+  CarouselController buttonCarouselController = CarouselController();
 
   final formKey = GlobalKey<FormState>();
   int updatedindex = 0;
   bool like = false;
+
   // var defaultTargetPlatform;
   // bool isLoading = false;
   // bool isMobile() {
@@ -62,93 +65,75 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: height * 0.08,
-                        width: width,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Card(
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Card(
+                            color: const Color(0xff9BAD87),
+                            elevation: 10,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Container(
+                              height: height * 0.06,
+                              width: width * 0.08,
+                              decoration: BoxDecoration(
                                 color: const Color(0xff9BAD87),
-                                elevation: 10,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Container(
-                                  height: height * 0.06,
-                                  width: width * 0.08,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xff9BAD87),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Icon(
-                                    Icons.arrow_back_ios_new,
-                                    color: Colors.white,
-                                    size: width * 0.05,
-                                  ),
-                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Icon(
+                                Icons.arrow_back_ios_new,
+                                color: Colors.white,
+                                size: width * 0.05,
                               ),
                             ),
-                            SizedBox(
-                              height: height,
-                              width: width * 0.2,
-                              child: Row(
-                                children: [
-                                  Card(
-                                    color: const Color(0xff9BAD87),
-                                    elevation: 10,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: Container(
-                                      height: height * 0.06,
-                                      width: width * 0.08,
-                                      decoration: BoxDecoration(
-                                        color: const Color(0xff9BAD87),
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      child: InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            like = !like;
-                                          });
-                                        },
-                                        child: Icon(
-                                          Icons.favorite,
-                                          color:
-                                              like ? Colors.red : Colors.white,
-                                          size: width * 0.05,
-                                        ),
-                                      ),
-                                    ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: height * 0.01,
+                      ),
+                      SizedBox(
+                        height: height * 0.25,
+                        width: width * 0.95,
+                        child: CarouselSlider.builder(
+                          itemCount: 5,
+                          carouselController: buttonCarouselController,
+                          // itemCount:
+                          //     DashBoardModelClass.dashBoardModelClass.length,
+                          options: CarouselOptions(
+                            autoPlay: true,
+                            enlargeCenterPage: true,
+                            viewportFraction: 0.8,
+                            aspectRatio: 2.0,
+                            initialPage: 1,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                // currentindex = index;
+                              });
+                            },
+                          ),
+                          itemBuilder: (context, index, realIndex) {
+                            return Stack(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.circular(15),
+                                    // image: DecorationImage(
+                                    //   fit: BoxFit.cover,
+                                    //   image: AssetImage(
+                                    //       '${DashBoardModelClass.dashBoardModelClass[index].image}'),
+                                    // ),
                                   ),
-                                  Card(
-                                    color: const Color(0xff9BAD87),
-                                    elevation: 10,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Container(
-                                      height: height * 0.06,
-                                      width: width * 0.08,
-                                      decoration: BoxDecoration(
-                                        color: const Color(0xff9BAD87),
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      child: Icon(
-                                        Icons.search,
-                                        color: Colors.white,
-                                        size: width * 0.05,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
+                                  height: height,
+                                  width: width * 0.95,
+                                ),
+                              ],
+                            );
+                          },
                         ),
                       ),
                       SizedBox(

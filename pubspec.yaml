@@ -43,6 +43,8 @@ dependencies:
   firebase_analytics:  
   firebase_messaging:
   cloud_firestore: 
+  carousel_slider: ^4.2.1
+
 
   
 dev_dependencies:
