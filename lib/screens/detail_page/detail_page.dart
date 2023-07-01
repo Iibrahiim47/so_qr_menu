@@ -1,13 +1,14 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:so_qr_menu/models/menu_model.dart';
 
 class DetailPage extends StatefulWidget {
-  MenuModelClass model;
+  // MenuModelClass model;
 
-  DetailPage({super.key, required this.model});
+  const DetailPage({
+    super.key,
+    //  required this.model
+  });
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -56,17 +57,17 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                         height: height * 0.6,
                         width: width,
-                        child: CachedNetworkImage(
-                          progressIndicatorBuilder: (context, url, progress) {
-                            return Center(
-                              child: CircularProgressIndicator(
-                                value: progress.progress,
-                              ),
-                            );
-                          },
-                          imageUrl: '${widget.model.image}',
-                          fit: BoxFit.cover,
-                        ),
+                        // child: CachedNetworkImage(
+                        //   progressIndicatorBuilder: (context, url, progress) {
+                        //     return Center(
+                        //       child: CircularProgressIndicator(
+                        //         value: progress.progress,
+                        //       ),
+                        //     );
+                        //   },
+                        //   imageUrl: '${widget.model.image}',
+                        //   fit: BoxFit.cover,
+                        // ),
                       ),
                       SizedBox(
                         height: height * 0.08,
@@ -131,7 +132,8 @@ class _DetailPageState extends State<DetailPage> {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                '${widget.model.name} - ${widget.model.arabicName}',
+                                'name',
+                                // '${widget.model.name} - ${widget.model.arabicName}',
                                 style: TextStyle(
                                   fontSize: width * 0.035,
                                   fontWeight: FontWeight.bold,
@@ -145,7 +147,8 @@ class _DetailPageState extends State<DetailPage> {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                '${widget.model.price}',
+                                'Price',
+                                // '${widget.model.price}',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: width * 0.028,
@@ -160,7 +163,8 @@ class _DetailPageState extends State<DetailPage> {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                '${widget.model.description}',
+                                'Description',
+                                // '${widget.model.description}',
                                 style: TextStyle(
                                   fontSize: width * 0.028,
                                 ),

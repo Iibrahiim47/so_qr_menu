@@ -81,171 +81,225 @@ class _LoginScreenState extends State<LoginScreen> {
           SizedBox(
             height: height,
             width: width,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: height * 0.1,
-                ),
-                Container(
-                  height: height * 0.1,
-                  width: width * 0.2,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: width * 0.04,
+                right: width * 0.04,
+              ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: height * 0.02,
                   ),
-                  child: Image.asset(
-                    'images/logo1.png',
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Card(
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          // showModalBottomSheet(
+                          //     context: context,
+                          //     shape: const RoundedRectangleBorder(
+                          //       borderRadius: BorderRadius.vertical(
+                          //         top: Radius.circular(25.0),
+                          //       ),
+                          //     ),
+                          //     backgroundColor:
+                          //         Colors.amberAccent, // <-- SEE HERE
+                          //     builder: (context) {
+                          //       return SizedBox(
+                          //         height: height,
+                          //         child: const Column(
+                          //           crossAxisAlignment:
+                          //               CrossAxisAlignment.start,
+                          //           mainAxisSize: MainAxisSize.min,
+                          //           children: <Widget>[],
+                          //         ),
+                          //       );
+                          //     });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: const Color(0xff9BAD87),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          height: height * 0.04,
+                          width: width * 0.08,
+                          child: const Icon(
+                            Icons.sentiment_satisfied_outlined,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: height * 0.01,
-                ),
-                SizedBox(
-                  height: height * 0.05,
-                  width: width * 0.4,
-                  child: Center(
-                    child: Text(
-                      'So Cafe',
-                      style: TextStyle(
+                  SizedBox(
+                    height: height * 0.08,
+                  ),
+                  Container(
+                    height: height * 0.1,
+                    width: width * 0.2,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.asset(
+                      'images/logo1.png',
+                    ),
+                  ),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  SizedBox(
+                    height: height * 0.05,
+                    width: width * 0.4,
+                    child: Center(
+                      child: Text(
+                        'So Cafe',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: width * 0.035,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: height * 0.05,
+                    width: width * 0.4,
+                    child: Center(
+                      child: Text(
+                        'Value * View * Victory ',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: width * 0.02,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: height * 0.03,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: height * 0.07,
+                      width: width * 0.34,
+                      decoration: BoxDecoration(
                         color: Colors.white,
-                        fontSize: width * 0.035,
-                        fontWeight: FontWeight.w500,
+                        borderRadius: BorderRadius.circular(
+                          5,
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Menu',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: width * 0.035,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: height * 0.05,
-                  width: width * 0.4,
-                  child: Center(
-                    child: Text(
-                      'Value * View * Victory ',
-                      style: TextStyle(
+                  // SizedBox(
+                  //   height: height * 0.03,
+                  // ),
+                  // InkWell(
+                  //   onTap: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) => const RamadanSpecial(),
+                  //       ),
+                  //     );
+                  //     // reviewslink(googlemapreviewslink);
+                  //   },
+                  //   child: Container(
+                  //     height: height * 0.07,
+                  //     width: width * 0.35,
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.white,
+                  //       borderRadius: BorderRadius.circular(
+                  //         5,
+                  //       ),
+                  //     ),
+                  //     child: Center(
+                  //       child: Text(
+                  //         'Ramadan Special',
+                  //         style: TextStyle(
+                  //           fontWeight: FontWeight.w600,
+                  //           fontSize: width * 0.035,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  SizedBox(
+                    height: height * 0.03,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      instaapp(instaurl);
+                    },
+                    child: Container(
+                      height: height * 0.07,
+                      width: width * 0.35,
+                      decoration: BoxDecoration(
                         color: Colors.white,
-                        fontSize: width * 0.02,
+                        borderRadius: BorderRadius.circular(
+                          5,
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: height * 0.03,
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomePage(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    height: height * 0.07,
-                    width: width * 0.34,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(
-                        5,
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Menu',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: width * 0.035,
+                      child: Center(
+                        child: Text(
+                          'Instagram',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: width * 0.035,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                // SizedBox(
-                //   height: height * 0.03,
-                // ),
-                // InkWell(
-                //   onTap: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (context) => const RamadanSpecial(),
-                //       ),
-                //     );
-                //     // reviewslink(googlemapreviewslink);
-                //   },
-                //   child: Container(
-                //     height: height * 0.07,
-                //     width: width * 0.35,
-                //     decoration: BoxDecoration(
-                //       color: Colors.white,
-                //       borderRadius: BorderRadius.circular(
-                //         5,
-                //       ),
-                //     ),
-                //     child: Center(
-                //       child: Text(
-                //         'Ramadan Special',
-                //         style: TextStyle(
-                //           fontWeight: FontWeight.w600,
-                //           fontSize: width * 0.035,
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                SizedBox(
-                  height: height * 0.03,
-                ),
-                InkWell(
-                  onTap: () {
-                    instaapp(instaurl);
-                  },
-                  child: Container(
-                    height: height * 0.07,
-                    width: width * 0.35,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(
-                        5,
+                  SizedBox(
+                    height: height * 0.03,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      reviewslink(googlemapreviewslink);
+                    },
+                    child: Container(
+                      height: height * 0.07,
+                      width: width * 0.35,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(
+                          5,
+                        ),
                       ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Instagram',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: width * 0.035,
+                      child: Center(
+                        child: Text(
+                          'Reviews',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: width * 0.035,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: height * 0.03,
-                ),
-                InkWell(
-                  onTap: () {
-                    reviewslink(googlemapreviewslink);
-                  },
-                  child: Container(
-                    height: height * 0.07,
-                    width: width * 0.35,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(
-                        5,
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Reviews',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: width * 0.035,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
