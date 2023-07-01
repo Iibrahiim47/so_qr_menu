@@ -44,6 +44,9 @@ dependencies:
   firebase_messaging:
   cloud_firestore: 
   carousel_slider: ^4.2.1
+  intl_phone_number_input:
+  flutter_rating_bar: ^4.0.1
+
 
 
   

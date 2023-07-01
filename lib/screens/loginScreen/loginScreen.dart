@@ -1,6 +1,7 @@
 // ignore_for_file: file_names, deprecated_member_use, prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
 import 'package:so_qr_menu/screens/homescreen/home_screen.dart';
+import 'package:so_qr_menu/screens/reviews_page/review.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -100,26 +101,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       child: InkWell(
                         onTap: () {
-                          // showModalBottomSheet(
-                          //     context: context,
-                          //     shape: const RoundedRectangleBorder(
-                          //       borderRadius: BorderRadius.vertical(
-                          //         top: Radius.circular(25.0),
-                          //       ),
-                          //     ),
-                          //     backgroundColor:
-                          //         Colors.amberAccent, // <-- SEE HERE
-                          //     builder: (context) {
-                          //       return SizedBox(
-                          //         height: height,
-                          //         child: const Column(
-                          //           crossAxisAlignment:
-                          //               CrossAxisAlignment.start,
-                          //           mainAxisSize: MainAxisSize.min,
-                          //           children: <Widget>[],
-                          //         ),
-                          //       );
-                          //     });
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ReviesPage(),
+                            ),
+                          );
                         },
                         child: Container(
                           decoration: BoxDecoration(
