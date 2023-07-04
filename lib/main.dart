@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           PointerDeviceKind.unknown,
         },
       ),
-      title: 'Flutter Demo',
+      title: 'Menu',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

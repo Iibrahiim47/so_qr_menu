@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:so_qr_menu/controller/get_category_controller/get_category_controller.dart';
 import 'package:so_qr_menu/screens/loginScreen/loginScreen.dart';
-import 'package:so_qr_menu/user_website.dart/controllers/user_home_controller.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,6 +13,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    Get.put(CategoryController());
     Future.delayed(const Duration(seconds: 2), () {
       // Navigator.push(context,
       //     MaterialPageRoute(builder: (context) => const LoginScreen()));
@@ -23,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       );
     });
-    Get.put(UserHomeController());
+    // Get.put(UserHomeController());
 
     super.initState();
   }
