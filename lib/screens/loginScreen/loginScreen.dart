@@ -12,16 +12,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // var defaultTargetPlatform;
-  // bool isMobile() {
-  //   if (defaultTargetPlatform == TargetPlatform.iOS ||
-  //       defaultTargetPlatform == TargetPlatform.android) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
 ///////instagram link//////////////////////
   String instaurl = 'https://instagram.com/so.khor?igshid=OGQ2MjdiOTE=';
 
@@ -72,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
-                  'images/homebg1.jpg',
+                  'images/background.jpeg',
                 ),
               ),
             ),
@@ -96,9 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.centerLeft,
                     child: Card(
                       elevation: 10,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
+                      shape: const CircleBorder(),
                       child: InkWell(
                         onTap: () {
                           Navigator.push(

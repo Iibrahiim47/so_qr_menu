@@ -1,14 +1,13 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:so_qr_menu/models/get_product_model/get_product_model.dart';
+import 'package:so_qr_menu/static_valeus.dart';
 
 class DetailPage extends StatefulWidget {
-  // MenuModelClass model;
+  Data model;
 
-  const DetailPage({
-    super.key,
-    //  required this.model
-  });
+  DetailPage({super.key, required this.model});
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -32,7 +31,7 @@ class _DetailPageState extends State<DetailPage> {
           image: DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage(
-              'images/homebg.jpg',
+              'images/background.jpeg',
             ),
           ),
         ),
@@ -47,27 +46,15 @@ class _DetailPageState extends State<DetailPage> {
                   Stack(
                     children: [
                       Container(
-                        decoration: const BoxDecoration(
-                            // image: DecorationImage(
-                            //   fit: BoxFit.fill,
-                            //   image: AssetImage(
-                            //     '${widget.image}',
-                            //   ),
-                            // ),
-                            ),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                                "${StaticValues.imageUrl}${widget.model.imageUrl}"),
+                          ),
+                        ),
                         height: height * 0.6,
                         width: width,
-                        // child: CachedNetworkImage(
-                        //   progressIndicatorBuilder: (context, url, progress) {
-                        //     return Center(
-                        //       child: CircularProgressIndicator(
-                        //         value: progress.progress,
-                        //       ),
-                        //     );
-                        //   },
-                        //   imageUrl: '${widget.model.image}',
-                        //   fit: BoxFit.cover,
-                        // ),
                       ),
                       SizedBox(
                         height: height * 0.08,
@@ -132,8 +119,7 @@ class _DetailPageState extends State<DetailPage> {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                'name',
-                                // '${widget.model.name} - ${widget.model.arabicName}',
+                                '${widget.model.engName} - ${widget.model.araName}',
                                 style: TextStyle(
                                   fontSize: width * 0.035,
                                   fontWeight: FontWeight.bold,
@@ -147,8 +133,7 @@ class _DetailPageState extends State<DetailPage> {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                'Price',
-                                // '${widget.model.price}',
+                                '${widget.model.price}',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: width * 0.028,
@@ -163,8 +148,7 @@ class _DetailPageState extends State<DetailPage> {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                'Description',
-                                // '${widget.model.description}',
+                                '${widget.model.description}',
                                 style: TextStyle(
                                   fontSize: width * 0.028,
                                 ),

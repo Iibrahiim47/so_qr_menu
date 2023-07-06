@@ -1,6 +1,6 @@
 class StaticValues {
   static const baseUrl = 'https://api.socafe.cafe/api/';
-  static const imageUrl = 'https://api.socafe.cafe/api';
+  static const imageUrl = 'https://api.socafe.cafe';
 
   static int? id;
   static const userSignUpUrl = '${StaticValues.baseUrl}UserApi/RegsiterUser';
@@ -12,7 +12,8 @@ class StaticValues {
       '${StaticValues.baseUrl}UserApi/UserProfile';
   static const addCategoryUrl = '${StaticValues.baseUrl}Categories/AddCategory';
   static const getAllCategoryUrl =
-      '${StaticValues.baseUrl}Categories/GetCategories/1';
+      '${StaticValues.baseUrl}Categories/GetCategories/3';
   static const addProductUrl = '${StaticValues.baseUrl}Product/AddProduct';
-  static const getproducteUrl = '${StaticValues.baseUrl}Product/GetProduct/4';
+  static const getSliderUrl = '${StaticValues.baseUrl}Slider/GetSlider/3';
+  static const getproducteUrl = '${StaticValues.baseUrl}Product/GetProduct/';
 }

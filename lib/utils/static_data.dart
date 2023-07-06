@@ -1,20 +1,21 @@
 class StaticValues {
-  static const baseUrl = 'http://161.97.127.67:9999/';
+  static const baseUrl = 'https://api.socafe.cafe/api/';
+  static const imageUrl = 'https://api.socafe.cafe';
+
   static int? id;
-  // static final userSignUpUrl =
-  //     '${StaticValues.baseUrl}api/Registration/Register';
-  // static final userLoginUrl = '${StaticValues.baseUrl}api/Registration/Login';
-  // static final userEmailVeriyUrl =
-  //     '${StaticValues.baseUrl}api/Registration/VerifyEmail';
-  // static final forgetPassUrl =
-  //     '${StaticValues.baseUrl}api/Registration/newPassword';
-  // static final changePassUrl =
-  //     '${StaticValues.baseUrl}api/Registration/PasswordChange';
-  // static final getProfilUrl = '${StaticValues.baseUrl}api/Registration/Profile';
-  // static final AddPostUrl = '${StaticValues.baseUrl}api/Postandadd/post';
-  static const getAllPostUrl = '${StaticValues.baseUrl}api/Postandadd/allPosts';
-  // static final getMyAllPostUrl =
-  //     '${StaticValues.baseUrl}api/Postandadd/MyallPosts';
-  // static final editProfileUrl =
-  //     '${StaticValues.baseUrl}api/EditProfile/ProfileEdit';
+  static const userSignUpUrl = '${StaticValues.baseUrl}UserApi/RegsiterUser';
+  static const userLoginUrl = '${StaticValues.baseUrl}UserApi/UserLogin';
+  static const addBranchUrl = '${StaticValues.baseUrl}Branch/AddBranch';
+  static const getBranchUrl = '${StaticValues.baseUrl}Branch/GetBranches';
+  static const getUserUrl = '${StaticValues.baseUrl}UserApi/GetUsers';
+  static const getusersProfilUrl = '${StaticValues.baseUrl}UserApi/UserProfile';
+  static const addCategoryUrl = '${StaticValues.baseUrl}Categories/AddCategory';
+  static const getAllCategoryUrl =
+      '${StaticValues.baseUrl}Categories/GetCategories/';
+  static const addProductUrl = '${StaticValues.baseUrl}Product/AddProduct';
+  static const getOwnerUrl = '${StaticValues.baseUrl}UserApi/OwnerProfile';
+  static const getSliderUrl = '${StaticValues.baseUrl}Slider/GetSlider/3';
+  static const getproducteUrl = '${StaticValues.baseUrl}Product/GetProduct/';
+  static const addUserFeedBackUrl =
+      '${StaticValues.baseUrl}Feedback/AddCategory';
 }
