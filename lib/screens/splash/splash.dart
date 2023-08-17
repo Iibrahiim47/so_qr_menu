@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
       );
     });
     // Get.put(UserHomeController());
-
+    CategoryController.to.getCatagoriesList();
     super.initState();
   }
 
@@ -32,20 +32,23 @@ class _SplashScreenState extends State<SplashScreen> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Stack(
+      backgroundColor: const Color(0xffE64692),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            height: height,
-            width: width,
-          ),
-          Container(
-            height: height,
-            width: width,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(
-                  'images/homebg.jpg',
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              height: height * 0.2,
+              width: width * 0.4,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  alignment: Alignment.center,
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    'images/barbielogo.png',
+                  ),
                 ),
               ),
             ),

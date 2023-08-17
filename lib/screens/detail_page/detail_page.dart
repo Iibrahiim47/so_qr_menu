@@ -24,23 +24,16 @@ class _DetailPageState extends State<DetailPage> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: const Color(0xffE64692),
       body: Container(
         height: height,
         width: width,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(
-              'images/background.jpeg',
-            ),
-          ),
-        ),
+        decoration: const BoxDecoration(),
         child: Stack(
           children: [
             SizedBox(
               height: height,
               width: width,
-              // color: Colors.red,
               child: Column(
                 children: [
                   Stack(
@@ -72,7 +65,8 @@ class _DetailPageState extends State<DetailPage> {
                                   Navigator.pop(context);
                                 },
                                 child: Card(
-                                  color: const Color(0xff9BAD87),
+                                  // color: const Color(0xff9BAD87),
+                                  color: const Color(0xffE64692),
                                   elevation: 10,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10)),
@@ -80,7 +74,8 @@ class _DetailPageState extends State<DetailPage> {
                                     height: height * 0.06,
                                     width: width * 0.08,
                                     decoration: BoxDecoration(
-                                      color: const Color(0xff9BAD87),
+                                      // color: const Color(0xff9BAD87),
+                                      color: const Color(0xffE64692),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Icon(

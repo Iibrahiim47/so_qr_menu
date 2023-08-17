@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:so_qr_menu/screens/homescreen/home_screen.dart';
 import 'package:so_qr_menu/screens/reviews_page/review.dart';
+import 'package:so_qr_menu/utils/spinkit.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -12,6 +13,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool loadData = false;
+
 ///////instagram link//////////////////////
   String instaurl = 'https://instagram.com/so.khor?igshid=OGQ2MjdiOTE=';
 
@@ -54,17 +57,20 @@ class _LoginScreenState extends State<LoginScreen> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: const Color(0xffE64692),
       body: Stack(
         children: [
           Container(
             decoration: const BoxDecoration(
-              color: Color(0xff9BAD87),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(
-                  'images/background.jpeg',
-                ),
-              ),
+              // color: Color(0xff9BAD87),
+              color: Color(0xffE64692),
+
+              // image: DecorationImage(
+              //   fit: BoxFit.cover,
+              //   image: AssetImage(
+              //     'images/background.jpeg',
+              //   ),
+              // ),
             ),
             height: height,
             width: width,
@@ -98,7 +104,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                            color: const Color(0xff9BAD87),
+                            // color: const Color(0xff9BAD87),
+                            color: const Color(0xffE64692),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           height: height * 0.04,
@@ -121,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       shape: BoxShape.circle,
                     ),
                     child: Image.asset(
-                      'images/logo1.png',
+                      'images/barbielogo.png',
                     ),
                   ),
                   SizedBox(
@@ -159,11 +166,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomePage(),
-                        ),
+                      setState(() {
+                        loadData = true;
+                      });
+                      Future.delayed(
+                        const Duration(seconds: 1),
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            ),
+                          );
+                        },
                       );
                     },
                     child: Container(
@@ -186,39 +201,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  // SizedBox(
-                  //   height: height * 0.03,
-                  // ),
-                  // InkWell(
-                  //   onTap: () {
-                  //     Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //         builder: (context) => const RamadanSpecial(),
-                  //       ),
-                  //     );
-                  //     // reviewslink(googlemapreviewslink);
-                  //   },
-                  //   child: Container(
-                  //     height: height * 0.07,
-                  //     width: width * 0.35,
-                  //     decoration: BoxDecoration(
-                  //       color: Colors.white,
-                  //       borderRadius: BorderRadius.circular(
-                  //         5,
-                  //       ),
-                  //     ),
-                  //     child: Center(
-                  //       child: Text(
-                  //         'Ramadan Special',
-                  //         style: TextStyle(
-                  //           fontWeight: FontWeight.w600,
-                  //           fontSize: width * 0.035,
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
                   SizedBox(
                     height: height * 0.03,
                   ),
@@ -277,6 +259,15 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
+          loadData == true
+              ? Container(
+                  height: height,
+                  width: width,
+                  color: const Color(0xffE64692).withOpacity(0.3),
+                  // color: Colors.blue,
+                  child: SpinKit.loadSpinKit,
+                )
+              : Container()
         ],
       ),
     );

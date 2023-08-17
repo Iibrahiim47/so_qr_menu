@@ -40,13 +40,14 @@ class _ReviesPageState extends State<ReviesPage> {
           height: height,
           width: width,
           decoration: const BoxDecoration(
-            color: Color(0xff9BAD87),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage(
-                'images/homebg1.jpg',
-              ),
-            ),
+            // color: Color(0xff9BAD87),
+            color: Color(0xffE64692),
+            // image: DecorationImage(
+            //   fit: BoxFit.cover,
+            //   image: AssetImage(
+            //     'images/homebg1.jpg',
+            //   ),
+            // ),
           ),
           child: Column(
             children: [
@@ -57,7 +58,8 @@ class _ReviesPageState extends State<ReviesPage> {
                     Navigator.pop(context);
                   },
                   child: Card(
-                    color: const Color(0xff9BAD87),
+                    // color: const Color(0xff9BAD87),
+                    color: const Color(0xffE64692),
                     elevation: 10,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
@@ -65,7 +67,8 @@ class _ReviesPageState extends State<ReviesPage> {
                       height: height * 0.06,
                       width: width * 0.08,
                       decoration: BoxDecoration(
-                        color: const Color(0xff9BAD87),
+                        // color: const Color(0xff9BAD87),
+                        color: const Color(0xffE64692),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Icon(
@@ -111,7 +114,8 @@ class _ReviesPageState extends State<ReviesPage> {
                     hintText: "Name",
                     prefixIcon: Icon(
                       Icons.person,
-                      color: Color(0xff9BAD87),
+                      // color: Color(0xff9BAD87),
+                      color: Color(0xffE64692),
                     ),
                   ),
                 ),
@@ -136,7 +140,8 @@ class _ReviesPageState extends State<ReviesPage> {
                     hintText: "Email",
                     prefixIcon: Icon(
                       Icons.email,
-                      color: Color(0xff9BAD87),
+                      // color: Color(0xff9BAD87),
+                      color: Color(0xffE64692),
                     ),
                   ),
                 ),
@@ -150,7 +155,8 @@ class _ReviesPageState extends State<ReviesPage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(
-                    color: const Color(0xff9BAD87),
+                    // color: const Color(0xff9BAD87),
+                    color: const Color(0xffE64692),
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -161,55 +167,12 @@ class _ReviesPageState extends State<ReviesPage> {
                     hintText: "Contact Number ",
                     prefixIcon: Icon(
                       Icons.contact_phone,
-                      color: Color(0xff9BAD87),
+                      // color: Color(0xff9BAD87),
+                      color: Color(0xffE64692),
                     ),
                   ),
                 ),
               ),
-              // Container(
-              //   height: height * 0.06,
-              //   width: width * 0.8,
-              //   decoration: BoxDecoration(
-              //     borderRadius: BorderRadius.circular(20),
-              //     color: Colors.white,
-              //   ),
-              //   child: Padding(
-              //     padding: const EdgeInsets.all(8.0),
-              //     child: InternationalPhoneNumberInput(
-              //       inputBorder: InputBorder.none,
-              //       validator: (value) {
-              //         if (value == null || value.isEmpty) {
-              //           return 'Required';
-              //         }
-              //         return null;
-              //       },
-              //       onInputChanged: (PhoneNumber number) {
-              //         print(number.phoneNumber);
-              //         setState(() {
-              //           fullNumber = number.phoneNumber!;
-              //         });
-              //       },
-              //       onInputValidated: (bool value) {
-              //         print(value);
-              //       },
-              //       selectorConfig: const SelectorConfig(
-              //         selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-              //       ),
-              //       ignoreBlank: false,
-              //       autoValidateMode: AutovalidateMode.disabled,
-              //       selectorTextStyle: const TextStyle(color: Colors.black),
-              //       initialValue: number,
-              //       textFieldController: contactnumController,
-              //       formatInput: true,
-              //       keyboardType: const TextInputType.numberWithOptions(
-              //           signed: true, decimal: true),
-              //       // inputBorder: const OutlineInputBorder(),
-              //       onSaved: (PhoneNumber number) {
-              //         print('On Saved: $number');
-              //       },
-              //     ),
-              //   ),
-              // ),
               SizedBox(
                 height: height * 0.01,
               ),
@@ -219,7 +182,8 @@ class _ReviesPageState extends State<ReviesPage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(
-                    color: const Color(0xff9BAD87),
+                    // color: const Color(0xff9BAD87),
+                    color: const Color(0xffE64692),
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -230,7 +194,8 @@ class _ReviesPageState extends State<ReviesPage> {
                     hintText: "Where are you from, City?",
                     prefixIcon: Icon(
                       Icons.location_on,
-                      color: Color(0xff9BAD87),
+                      // color: Color(0xff9BAD87),
+                      color: Color(0xffE64692),
                     ),
                   ),
                 ),
@@ -314,7 +279,8 @@ class _ReviesPageState extends State<ReviesPage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(
-                    color: const Color(0xff9BAD87),
+                    // color: const Color(0xff9BAD87),
+                    color: const Color(0xffE64692),
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -325,12 +291,12 @@ class _ReviesPageState extends State<ReviesPage> {
                     hintText: "How did you find out about us?",
                     prefixIcon: Icon(
                       Icons.info,
-                      color: Color(0xff9BAD87),
+                      // color: Color(0xff9BAD87),
+                      color: Color(0xffE64692),
                     ),
                   ),
                 ),
               ),
-
               SizedBox(
                 height: height * 0.01,
               ),
@@ -340,7 +306,8 @@ class _ReviesPageState extends State<ReviesPage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(
-                    color: const Color(0xff9BAD87),
+                    // color: const Color(0xff9BAD87),
+                    color: const Color(0xffE64692),
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -351,7 +318,8 @@ class _ReviesPageState extends State<ReviesPage> {
                     hintText: "what would you like us to improve upon?",
                     prefixIcon: Icon(
                       Icons.info,
-                      color: Color(0xff9BAD87),
+                      // color: Color(0xff9BAD87),
+                      color: Color(0xffE64692),
                     ),
                   ),
                 ),
@@ -456,7 +424,8 @@ class _ReviesPageState extends State<ReviesPage> {
                       style: TextStyle(
                         fontSize: width * 0.045,
                         fontWeight: FontWeight.bold,
-                        color: const Color(0xff9BAD87),
+                        // color: const Color(0xff9BAD87),
+                        color: const Color(0xffE64692),
                       ),
                     ),
                   ),
