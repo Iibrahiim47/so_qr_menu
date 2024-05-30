@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:so_qr_menu/screens/homescreen/home_screen.dart';
 import 'package:so_qr_menu/screens/reviews_page/review.dart';
-import 'package:so_qr_menu/utils/spinkit.dart';
+import 'package:so_qr_menu/theme/admin_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatefulWidget {
+  // static const routeName = "login-screen";
+
   const LoginScreen({super.key});
 
   @override
@@ -57,13 +59,13 @@ class _LoginScreenState extends State<LoginScreen> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: const Color(0xffE64692),
+      backgroundColor: SoMenuTheme.primarycolor,
       body: Stack(
         children: [
           Container(
-            decoration: const BoxDecoration(
-              // color: Color(0xff9BAD87),
-              color: Color(0xffE64692),
+            decoration: BoxDecoration(
+              color: SoMenuTheme.bgcolor,
+              // color: Color(0xffE64692),
 
               // image: DecorationImage(
               //   fit: BoxFit.cover,
@@ -105,14 +107,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Container(
                           decoration: BoxDecoration(
                             // color: const Color(0xff9BAD87),
-                            color: const Color(0xffE64692),
+                            color: SoMenuTheme.primarycolor,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           height: height * 0.04,
                           width: width * 0.08,
-                          child: const Icon(
+                          child: Icon(
                             Icons.sentiment_satisfied_outlined,
-                            color: Colors.white,
+                            color: SoMenuTheme.bgcolor,
                           ),
                         ),
                       ),
@@ -121,14 +123,33 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: height * 0.08,
                   ),
-                  Container(
-                    height: height * 0.1,
-                    width: width * 0.2,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                    ),
-                    child: Image.asset(
-                      'images/barbielogo.png',
+                  SizedBox(
+                    height: height * 0.22,
+                    width: width * 0.4,
+                    // color: Colors.amber,
+                    child: Row(
+                      children: [
+                        Container(
+                          height: height * 0.2,
+                          width: width * 0.2,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Image.asset(
+                            'images/logo.png',
+                          ),
+                        ),
+                        Container(
+                          height: height * 0.2,
+                          width: width * 0.2,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Image.asset(
+                            'images/icon.png',
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(
@@ -141,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text(
                         'So Cafe',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: SoMenuTheme.primarycolor,
                           fontSize: width * 0.035,
                           fontWeight: FontWeight.w500,
                         ),
@@ -155,7 +176,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text(
                         'Value * View * Victory ',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: SoMenuTheme.primarycolor,
                           fontSize: width * 0.02,
                         ),
                       ),
@@ -166,26 +187,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      setState(() {
-                        loadData = true;
-                      });
-                      Future.delayed(
-                        const Duration(seconds: 1),
-                        () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomePage(),
-                            ),
-                          );
-                        },
+                      // setState(() {
+                      //   loadData = true;
+                      // });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        ),
                       );
                     },
                     child: Container(
                       height: height * 0.07,
                       width: width * 0.34,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: SoMenuTheme.primarycolor,
                         borderRadius: BorderRadius.circular(
                           5,
                         ),
@@ -194,6 +210,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text(
                           'Menu',
                           style: TextStyle(
+                            color: SoMenuTheme.bgcolor,
                             fontWeight: FontWeight.w600,
                             fontSize: width * 0.035,
                           ),
@@ -212,7 +229,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: height * 0.07,
                       width: width * 0.35,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: SoMenuTheme.primarycolor,
                         borderRadius: BorderRadius.circular(
                           5,
                         ),
@@ -221,6 +238,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text(
                           'Instagram',
                           style: TextStyle(
+                            color: SoMenuTheme.bgcolor,
                             fontWeight: FontWeight.w600,
                             fontSize: width * 0.035,
                           ),
@@ -239,7 +257,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: height * 0.07,
                       width: width * 0.35,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: SoMenuTheme.primarycolor,
                         borderRadius: BorderRadius.circular(
                           5,
                         ),
@@ -248,6 +266,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text(
                           'Reviews',
                           style: TextStyle(
+                            color: SoMenuTheme.bgcolor,
                             fontWeight: FontWeight.w600,
                             fontSize: width * 0.035,
                           ),
@@ -259,15 +278,15 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          loadData == true
-              ? Container(
-                  height: height,
-                  width: width,
-                  color: const Color(0xffE64692).withOpacity(0.3),
-                  // color: Colors.blue,
-                  child: SpinKit.loadSpinKit,
-                )
-              : Container()
+          // loadData == true
+          //     ? Container(
+          //         height: height,
+          //         width: width,
+          //         color: const Color(0xffE64692).withOpacity(0.3),
+          //         // color: Colors.blue,
+          //         child: SpinKit.loadSpinKit,
+          //       )
+          //     : Container()
         ],
       ),
     );

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:so_qr_menu/controller/get_category_controller/review_controller.dart';
 import 'package:so_qr_menu/models/add_reviews_model.dart';
+import 'package:so_qr_menu/theme/admin_theme.dart';
 
 class ReviesPage extends StatefulWidget {
   const ReviesPage({super.key});
@@ -39,16 +40,16 @@ class _ReviesPageState extends State<ReviesPage> {
         return Container(
           height: height,
           width: width,
-          decoration: const BoxDecoration(
-            // color: Color(0xff9BAD87),
-            color: Color(0xffE64692),
-            // image: DecorationImage(
-            //   fit: BoxFit.cover,
-            //   image: AssetImage(
-            //     'images/homebg1.jpg',
-            //   ),
-            // ),
-          ),
+          decoration: BoxDecoration(
+              // color: Color(0xff9BAD87),
+              color: SoMenuTheme.primarycolor
+              // image: DecorationImage(
+              //   fit: BoxFit.cover,
+              //   image: AssetImage(
+              //     'images/homebg1.jpg',
+              //   ),
+              // ),
+              ),
           child: Column(
             children: [
               Align(
@@ -59,8 +60,7 @@ class _ReviesPageState extends State<ReviesPage> {
                   },
                   child: Card(
                     // color: const Color(0xff9BAD87),
-                    color: const Color(0xffE64692),
-                    elevation: 10,
+                    color: SoMenuTheme.primarycolor, elevation: 10,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     child: Container(
@@ -68,7 +68,7 @@ class _ReviesPageState extends State<ReviesPage> {
                       width: width * 0.08,
                       decoration: BoxDecoration(
                         // color: const Color(0xff9BAD87),
-                        color: const Color(0xffE64692),
+                        color: SoMenuTheme.primarycolor,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Icon(
@@ -109,13 +109,13 @@ class _ReviesPageState extends State<ReviesPage> {
                 ),
                 child: TextFormField(
                   controller: fullnameController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Name",
                     prefixIcon: Icon(
                       Icons.person,
                       // color: Color(0xff9BAD87),
-                      color: Color(0xffE64692),
+                      color: SoMenuTheme.primarycolor,
                     ),
                   ),
                 ),
@@ -135,13 +135,13 @@ class _ReviesPageState extends State<ReviesPage> {
                 ),
                 child: TextFormField(
                   controller: emailController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Email",
                     prefixIcon: Icon(
                       Icons.email,
                       // color: Color(0xff9BAD87),
-                      color: Color(0xffE64692),
+                      color: SoMenuTheme.primarycolor,
                     ),
                   ),
                 ),
@@ -156,19 +156,19 @@ class _ReviesPageState extends State<ReviesPage> {
                   color: Colors.white,
                   border: Border.all(
                     // color: const Color(0xff9BAD87),
-                    color: const Color(0xffE64692),
+                    color: SoMenuTheme.primarycolor,
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextFormField(
                   controller: contactnumController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Contact Number ",
                     prefixIcon: Icon(
                       Icons.contact_phone,
                       // color: Color(0xff9BAD87),
-                      color: Color(0xffE64692),
+                      color: SoMenuTheme.primarycolor,
                     ),
                   ),
                 ),
@@ -183,19 +183,19 @@ class _ReviesPageState extends State<ReviesPage> {
                   color: Colors.white,
                   border: Border.all(
                     // color: const Color(0xff9BAD87),
-                    color: const Color(0xffE64692),
+                    color: SoMenuTheme.primarycolor,
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextFormField(
                   controller: cityController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Where are you from, City?",
                     prefixIcon: Icon(
                       Icons.location_on,
                       // color: Color(0xff9BAD87),
-                      color: Color(0xffE64692),
+                      color: SoMenuTheme.primarycolor,
                     ),
                   ),
                 ),
@@ -280,19 +280,19 @@ class _ReviesPageState extends State<ReviesPage> {
                   color: Colors.white,
                   border: Border.all(
                     // color: const Color(0xff9BAD87),
-                    color: const Color(0xffE64692),
+                    color: SoMenuTheme.primarycolor,
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextFormField(
                   controller: howyoufindController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "How did you find out about us?",
                     prefixIcon: Icon(
                       Icons.info,
                       // color: Color(0xff9BAD87),
-                      color: Color(0xffE64692),
+                      color: SoMenuTheme.primarycolor,
                     ),
                   ),
                 ),
@@ -307,19 +307,19 @@ class _ReviesPageState extends State<ReviesPage> {
                   color: Colors.white,
                   border: Border.all(
                     // color: const Color(0xff9BAD87),
-                    color: const Color(0xffE64692),
+                    color: SoMenuTheme.primarycolor,
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextFormField(
                   controller: improveController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "what would you like us to improve upon?",
                     prefixIcon: Icon(
                       Icons.info,
                       // color: Color(0xff9BAD87),
-                      color: Color(0xffE64692),
+                      color: SoMenuTheme.primarycolor,
                     ),
                   ),
                 ),
@@ -425,7 +425,7 @@ class _ReviesPageState extends State<ReviesPage> {
                         fontSize: width * 0.045,
                         fontWeight: FontWeight.bold,
                         // color: const Color(0xff9BAD87),
-                        color: const Color(0xffE64692),
+                        color: SoMenuTheme.primarycolor,
                       ),
                     ),
                   ),

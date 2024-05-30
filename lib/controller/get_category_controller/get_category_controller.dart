@@ -15,11 +15,12 @@ class CategoryController extends GetxController {
   var image;
   String? fileName;
   String selectedCatName = "Category Name";
+  bool showProducts = false;
 
   //////////getCategory///////////
   generateCatName(String engName, arName) {
     selectedCatName = "$arName - $engName";
-    update();
+    // update();
   }
 
   List<DataList> getCatagoriesListData = [];
@@ -35,14 +36,18 @@ class CategoryController extends GetxController {
     );
     if (response!.statusCode == 200) {
       var catData = GetCatagoryListModel.fromJson(jsonDecode(response!.body));
+      print(response!.statusCode);
       for (var u in catData.data!) {
         getCatagoriesListData.add(u);
       }
-      generateCatName(
-          getCatagoriesListData[0].engName!, getCatagoriesListData[0].araName);
-      getProductList(getCatagoriesListData[0].categoryId!);
+      // generateCatName(
+      //     getCatagoriesListData[0].engName!, getCatagoriesListData[0].araName);
+      // getProductList(getCatagoriesListData[0].categoryId!);
+      print(response!.statusCode);
     }
-    update();
+    print(response!.statusCode);
+
+    // update();
     return getCatagoriesListData;
   }
 
@@ -63,7 +68,9 @@ class CategoryController extends GetxController {
       for (var u in productData.data!) {
         getProductListData.add(u);
       }
+      print("data availabla");
     }
+
     update();
     return getProductListData;
   }

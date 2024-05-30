@@ -3,8 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:so_qr_menu/models/get_product_model/get_product_model.dart';
 import 'package:so_qr_menu/static_valeus.dart';
+import 'package:so_qr_menu/theme/admin_theme.dart';
 
 class DetailPage extends StatefulWidget {
+  static const routeName = "detail-screen";
+
   Data model;
 
   DetailPage({super.key, required this.model});
@@ -24,7 +27,7 @@ class _DetailPageState extends State<DetailPage> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: const Color(0xffE64692),
+      backgroundColor: SoMenuTheme.primarycolor,
       body: Container(
         height: height,
         width: width,
@@ -66,7 +69,7 @@ class _DetailPageState extends State<DetailPage> {
                                 },
                                 child: Card(
                                   // color: const Color(0xff9BAD87),
-                                  color: const Color(0xffE64692),
+                                  color: SoMenuTheme.primarycolor,
                                   elevation: 10,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10)),
@@ -75,12 +78,12 @@ class _DetailPageState extends State<DetailPage> {
                                     width: width * 0.08,
                                     decoration: BoxDecoration(
                                       // color: const Color(0xff9BAD87),
-                                      color: const Color(0xffE64692),
+                                      color: SoMenuTheme.primarycolor,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Icon(
                                       Icons.arrow_back_ios_new,
-                                      color: Colors.white,
+                                      color: SoMenuTheme.bgcolor,
                                       size: width * 0.05,
                                     ),
                                   ),
@@ -116,9 +119,9 @@ class _DetailPageState extends State<DetailPage> {
                               child: Text(
                                 '${widget.model.engName} - ${widget.model.araName}',
                                 style: TextStyle(
-                                  fontSize: width * 0.035,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                    fontSize: width * 0.035,
+                                    fontWeight: FontWeight.bold,
+                                    color: SoMenuTheme.bgcolor),
                               ),
                             ),
                           ),
@@ -130,7 +133,7 @@ class _DetailPageState extends State<DetailPage> {
                               child: Text(
                                 '${widget.model.price}',
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: SoMenuTheme.bgcolor,
                                   fontSize: width * 0.028,
                                 ),
                               ),
@@ -145,6 +148,7 @@ class _DetailPageState extends State<DetailPage> {
                               child: Text(
                                 '${widget.model.description}',
                                 style: TextStyle(
+                                  color: SoMenuTheme.bgcolor,
                                   fontSize: width * 0.028,
                                 ),
                               ),

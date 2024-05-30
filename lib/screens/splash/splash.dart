@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:so_qr_menu/controller/get_category_controller/get_category_controller.dart';
 import 'package:so_qr_menu/screens/loginScreen/loginScreen.dart';
+import 'package:so_qr_menu/theme/admin_theme.dart';
 
 class SplashScreen extends StatefulWidget {
+  // static const routeName = "splash-screen";
+
   const SplashScreen({super.key});
 
   @override
@@ -22,8 +25,8 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       );
     });
-    // Get.put(UserHomeController());
     CategoryController.to.getCatagoriesList();
+
     super.initState();
   }
 
@@ -32,28 +35,40 @@ class _SplashScreenState extends State<SplashScreen> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: const Color(0xffE64692),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
+      backgroundColor: SoMenuTheme.bgcolor,
+      body: SizedBox(
+        height: height,
+        width: width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
               height: height * 0.2,
-              width: width * 0.4,
+              width: width * 0.2,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  alignment: Alignment.center,
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    'images/barbielogo.png',
+                    'images/logo.png',
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+            Container(
+              height: height * 0.2,
+              width: width * 0.2,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    'images/icon.png',
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
