@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage>
                     left: width * 0.03,
                     right: width * 0.03,
                   ),
-                  child: Column(
+                  child: ListView(
                     children: [
                       Align(
                         alignment: Alignment.centerLeft,
@@ -304,263 +304,181 @@ class _HomePageState extends State<HomePage>
                       // SizedBox(
                       //   height: height * 0.02,
                       // ),
-                      Expanded(
-                        child: SizedBox(
-                          height: height,
-                          width: width,
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: height * 0.07,
-                                width: width,
-                                // color: Colors.amber,
-                                child: Center(
-                                  child: Text(
-                                    obj.selectedCatName,
-                                    // obj.selectedCategory,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: width * 0.05,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: SizedBox(
-                                    height: height,
-                                    width: width,
-                                    child: obj.getProductListData.isEmpty
-                                        ? const Text("No products")
-                                        : ListView.builder(
-                                            addAutomaticKeepAlives: true,
-                                            physics:
-                                                const AlwaysScrollableScrollPhysics(),
-                                            key: formKey,
-                                            itemCount:
-                                                obj.getProductListData.length,
-                                            controller: scrollcontrollerv,
-                                            itemBuilder: (context, index) {
-                                              return Padding(
-                                                padding: EdgeInsets.only(
-                                                  top: height * 0.02,
-                                                ),
-                                                child: Card(
-                                                  elevation: 10,
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15),
-                                                  ),
-                                                  child: Container(
-                                                    height: height * 0.2,
-                                                    width: width,
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15),
-                                                      color: Colors.white,
-                                                    ),
-                                                    child: Row(
-                                                      children: [
-                                                        GestureDetector(
-                                                          onTap: () {
-                                                            Navigator.push(
-                                                                context,
-                                                                MaterialPageRoute(
-                                                                  builder:
-                                                                      (context) =>
-                                                                          DetailPage(
-                                                                    model: obj
-                                                                            .getProductListData[
-                                                                        index],
-                                                                  ),
-                                                                ));
-                                                          },
-                                                          child: obj
-                                                                  .getProductListData
-                                                                  .isEmpty
-                                                              ? const CircularProgressIndicator()
-                                                              : Container(
-                                                                  height:
-                                                                      height,
-                                                                  width: width *
-                                                                      0.3,
-                                                                  decoration:
-                                                                      const BoxDecoration(
-                                                                    // image:
-                                                                    //     DecorationImage(
-                                                                    //   fit: BoxFit
-                                                                    //       .cover,
-                                                                    //   image: NetworkImage(
-                                                                    //       "${StaticValues.imageUrl}${obj.getProductListData[index].imageUrl}"
-                                                                    //       // "${StaticValues.imageUrl}${obj.getCatagoriesListData[index].imageUrl!}",
-                                                                    //       ),
-                                                                    // ),
-                                                                    borderRadius: BorderRadius.only(
-                                                                        topLeft:
-                                                                            Radius.circular(
-                                                                                15),
-                                                                        bottomLeft:
-                                                                            Radius.circular(15)),
-                                                                  ),
-                                                                  child:
-                                                                      ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            16),
-                                                                    child:
-                                                                        CachedNetworkImage(
-                                                                      placeholder:
-                                                                          (context, url) =>
-                                                                              Container(
-                                                                        height: height *
-                                                                            0.05,
-                                                                        width: width *
-                                                                            0.1,
-                                                                        // color: Colors.amber,
-                                                                        alignment:
-                                                                            Alignment.center,
-                                                                        child:
-                                                                            const CircularProgressIndicator(
-                                                                          color:
-                                                                              Color(0xffE64692),
-                                                                        ),
-                                                                      ),
-                                                                      alignment:
-                                                                          Alignment
-                                                                              .center,
-                                                                      fit: BoxFit
-                                                                          .cover,
-                                                                      filterQuality:
-                                                                          FilterQuality
-                                                                              .medium,
-                                                                      // progressIndicatorBuilder:
-                                                                      //     (context, url,
-                                                                      //         progress) {
-                                                                      //   return const CircularProgressIndicator(
-                                                                      //     color: Color(
-                                                                      //         0xffE64692),
-                                                                      //   );
-                                                                      // },
-                                                                      imageUrl:
-                                                                          "${StaticValues.imageUrl}${obj.getProductListData[index].imageUrl}",
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                        ),
-                                                        Expanded(
-                                                          child: Container(
-                                                            decoration:
-                                                                const BoxDecoration(
-                                                                    borderRadius:
-                                                                        BorderRadius
-                                                                            .only(
-                                                              topRight: Radius
-                                                                  .circular(15),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          15),
-                                                            )),
-                                                            height: height,
-                                                            width: width,
-                                                            child: Column(
-                                                              children: [
-                                                                SizedBox(
-                                                                  height:
-                                                                      height *
-                                                                          0.06,
-                                                                  width: width,
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsets.only(
-                                                                        left: width *
-                                                                            0.02,
-                                                                        top: height *
-                                                                            0.01),
-                                                                    child: Text(
-                                                                      '${obj.getProductListData[index].araName}  ${obj.getProductListData[index].engName}',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        fontSize:
-                                                                            width *
-                                                                                0.025,
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                      ),
-                                                                      maxLines:
-                                                                          2,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child:
-                                                                      SizedBox(
-                                                                    height:
-                                                                        height,
-                                                                    width:
-                                                                        width,
-                                                                    child: Padding(
-                                                                        padding: EdgeInsets.only(
-                                                                          left: width *
-                                                                              0.02,
-                                                                          right:
-                                                                              width * 0.02,
-                                                                        ),
-                                                                        child: Text(
-                                                                          maxLines:
-                                                                              3,
-                                                                          '${obj.getProductListData[index].description} ',
-                                                                          style:
-                                                                              TextStyle(
-                                                                            fontSize:
-                                                                                width * 0.025,
-                                                                          ),
-                                                                        )),
-                                                                  ),
-                                                                ),
-                                                                SizedBox(
-                                                                  height:
-                                                                      height *
-                                                                          0.04,
-                                                                  width: width,
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsets.only(
-                                                                        left: width *
-                                                                            0.02,
-                                                                        top: height *
-                                                                            0.01),
-                                                                    child: Text(
-                                                                      '${obj.getProductListData[index].price} AED',
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: const Color(
-                                                                            0xffDCC7B6),
-                                                                        fontSize:
-                                                                            width *
-                                                                                0.028,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        )
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            },
-                                          )),
-                              )
-                            ],
+                      SizedBox(
+                        height: height * 0.07,
+                        width: width,
+                        // color: Colors.amber,
+                        child: Center(
+                          child: Text(
+                            obj.selectedCatName,
+                            // obj.selectedCategory,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: width * 0.05,
+                            ),
                           ),
                         ),
+                      ),
+                      Column(
+                        children: List.generate(obj.getProductListData.length,
+                            (index) {
+                          return Padding(
+                            padding: EdgeInsets.only(
+                              top: height * 0.02,
+                            ),
+                            child: Card(
+                              elevation: 10,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Container(
+                                height: height * 0.2,
+                                width: width,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Colors.white,
+                                ),
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => DetailPage(
+                                                model: obj
+                                                    .getProductListData[index],
+                                              ),
+                                            ));
+                                      },
+                                      child: obj.getProductListData.isEmpty
+                                          ? const CircularProgressIndicator()
+                                          : Container(
+                                              height: height,
+                                              width: width * 0.3,
+                                              decoration: const BoxDecoration(
+                                                // image:
+                                                //     DecorationImage(
+                                                //   fit: BoxFit
+                                                //       .cover,
+                                                //   image: NetworkImage(
+                                                //       "${StaticValues.imageUrl}${obj.getProductListData[index].imageUrl}"
+                                                //       // "${StaticValues.imageUrl}${obj.getCatagoriesListData[index].imageUrl!}",
+                                                //       ),
+                                                // ),
+                                                borderRadius: BorderRadius.only(
+                                                    topLeft:
+                                                        Radius.circular(15),
+                                                    bottomLeft:
+                                                        Radius.circular(15)),
+                                              ),
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(16),
+                                                child: CachedNetworkImage(
+                                                  placeholder: (context, url) =>
+                                                      Container(
+                                                    height: height * 0.05,
+                                                    width: width * 0.1,
+                                                    // color: Colors.amber,
+                                                    alignment: Alignment.center,
+                                                    child:
+                                                        const CircularProgressIndicator(
+                                                      color: Color(0xffE64692),
+                                                    ),
+                                                  ),
+                                                  alignment: Alignment.center,
+                                                  fit: BoxFit.cover,
+                                                  filterQuality:
+                                                      FilterQuality.medium,
+                                                  // progressIndicatorBuilder:
+                                                  //     (context, url,
+                                                  //         progress) {
+                                                  //   return const CircularProgressIndicator(
+                                                  //     color: Color(
+                                                  //         0xffE64692),
+                                                  //   );
+                                                  // },
+                                                  imageUrl:
+                                                      "${StaticValues.imageUrl}${obj.getProductListData[index].imageUrl}",
+                                                ),
+                                              ),
+                                            ),
+                                    ),
+                                    Expanded(
+                                      child: Container(
+                                        decoration: const BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(15),
+                                          bottomRight: Radius.circular(15),
+                                        )),
+                                        height: height,
+                                        width: width,
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: height * 0.06,
+                                              width: width,
+                                              child: Padding(
+                                                padding: EdgeInsets.only(
+                                                    left: width * 0.02,
+                                                    top: height * 0.01),
+                                                child: Text(
+                                                  '${obj.getProductListData[index].araName}  ${obj.getProductListData[index].engName}',
+                                                  style: TextStyle(
+                                                    fontSize: width * 0.025,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                  maxLines: 2,
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: SizedBox(
+                                                height: height,
+                                                width: width,
+                                                child: Padding(
+                                                    padding: EdgeInsets.only(
+                                                      left: width * 0.02,
+                                                      right: width * 0.02,
+                                                    ),
+                                                    child: Text(
+                                                      maxLines: 3,
+                                                      '${obj.getProductListData[index].description} ',
+                                                      style: TextStyle(
+                                                        fontSize: width * 0.025,
+                                                      ),
+                                                    )),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: height * 0.04,
+                                              width: width,
+                                              child: Padding(
+                                                padding: EdgeInsets.only(
+                                                    left: width * 0.02,
+                                                    top: height * 0.01),
+                                                child: Text(
+                                                  '${obj.getProductListData[index].price} AED',
+                                                  style: TextStyle(
+                                                    color:
+                                                        const Color(0xffDCC7B6),
+                                                    fontSize: width * 0.028,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
                       )
                     ],
                   ),
